@@ -6,7 +6,7 @@ WITH cleaning AS (
         pipeline_name,
         deal_stage_id,
         stage_name,
-        stage_display_order,
+        CAST(stage_display_order AS INTEGER) AS stage_display_order,
         /* there's a bad duplicate for id 14554829628 - i've elected to remove it in this code by using a row number function.
         There's an implicit assumption here that we only care about when deals first enter a stage and that is the most valid choice
         for when it considers moved between the stages.
