@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: deals
+    schema: public
+    tables:
+      - name: raw_deals
+      - name: raw_deal_pipeline_stages
