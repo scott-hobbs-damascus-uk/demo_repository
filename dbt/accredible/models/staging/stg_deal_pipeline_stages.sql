@@ -11,7 +11,7 @@ WITH cleaning AS (
         There's an implicit assumption here that we only care about when deals first enter a stage and that is the most valid choice
         for when it considers moved between the stages.
         We could do some complex logic to "fallback" to current stages, but that's too much for right now */
-        ROW_NUMBER() OVER (PARTITION BY deal_id, stage_name ORDER BY stage_created_at) AS row_id
+        ROW_NUMBER() OVER (PARTITION BY deal_id, stage_name ORDER BY stage_created_at ASC) AS row_id
     FROM
         {{ source('deals', 'raw_deal_pipeline_stages') }}
     
