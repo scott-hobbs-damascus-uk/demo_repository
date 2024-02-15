@@ -3,6 +3,6 @@
 SELECT
     deal_id
 FROM
-    {{ ref('stg_raw_deals') }}
+    {{ ref('stg_deals') }}
 WHERE
-    deal_id NOT IN (SELECT deal_id FROM {{ ref('stg_raw_deal_pipeline_stages')}})
+    deal_id NOT IN (SELECT deal_id FROM {{ ref('stg_deal_pipeline_stages')}})

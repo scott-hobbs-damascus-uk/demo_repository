@@ -1,14 +1,14 @@
 version: 2
 
 models:
-  - name: stg_raw_deals
+  - name: stg_deals
     columns:
       - name: deal_id
         tests:
           - unique
           - not_null
   
-  - name: stg_raw_deal_pipeline_stages
+  - name: stg_deal_pipeline_stages
     columns:
       - name: deal_id
         tests:
