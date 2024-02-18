@@ -10,6 +10,7 @@ SELECT
     COALESCE(CAST(NULLIF(amount_in_home_currency,'') AS DECIMAL), 0) AS amount_in_home_currency,
     /* assuming we don't need microsecond precision on these columns for now */
     TO_TIMESTAMP(created_at, 'YYYY-MM-DD\THH24:MI:ss') AS created_at,
+    /* there are some close dates of 0001-01-01 which probably should be removed, but ran out of time in this exercise */
     TO_TIMESTAMP(close_date, 'YYYY-MM-DD\THH24:MI:ss') AS close_date,
     deal_source_type
 FROM
