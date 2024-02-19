@@ -6,8 +6,10 @@ sources:
     tables:
       - name: raw_deals
         description: >
-        Point of truth for deal origin, value and similar detail. Contains one row per deal.
+          Point of truth for deal origin, value and similar detail. Contains one row per deal.
+
       - name: raw_deal_pipeline_stages
         description: >
-        Point of truth for deal status history. Contains one row per time a deal entered a stage.
-        Deals can enter a stage more than once and therefore caution should be taken when examining.
+          Point of truth for deal status history. Contains one row per time a deal entered a stage.
+          Deals can enter a stage more than once and therefore caution should be taken when examining.
+        
